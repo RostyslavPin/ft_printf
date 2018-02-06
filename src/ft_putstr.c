@@ -10,17 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 void	ft_putstr(char const *s)
 {
 	int i;
 
 	i = 0;
-	if (s != NULL)
+	if (!s)
+		return ;
+	else 
+	{
 		while (s[i] != '\0')
 		{
 			ft_putchar(s[i]);
 			i++;
 		}
+	}
 }
