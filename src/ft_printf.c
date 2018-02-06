@@ -17,6 +17,8 @@
 #include <stdio.h>
 // #include <locale.h>
 
+int g_ret;
+
 int	str_contains(char c)
 {
 	static char conversions [] = "sSpdDioOuUxXcC";
@@ -43,7 +45,7 @@ int flags(char flag, char *search)
 }
 //#0-+ and space
 
-void	handle_d_i(char *f, int d_i)
+int	handle_d_i(char *f, int d_i)
 {
 	int i;
 	int l_justfy;
@@ -72,6 +74,8 @@ void	handle_d_i(char *f, int d_i)
 			ft_putchar('+');
 		ft_putnbr(d_i);
 	}
+	g_ret = num_digits;
+	return(g_ret);
 }
 
 int ft_printf(const char *format, ...)
