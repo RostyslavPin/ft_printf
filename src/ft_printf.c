@@ -96,13 +96,13 @@ int ft_printf(const char *format, ...)
 				flags[i++] = *traverse++;
 			if (*traverse == 'd' || *traverse == 'i')
 				handle_d_i(flags, va_arg(arg, int));
-			if (*traverse == 'c')
+			else if (*traverse == 'c')
 				ft_putchar((unsigned char)(va_arg(arg, int)));
-			if (*traverse == 'C')
+			else if (*traverse == 'C')
 				ft_putchar_unicode(va_arg(arg, int));
-			if(*traverse == '%')
+			else if(*traverse == '%')
 				ft_putchar('%');
-			if (*traverse == 's')
+			else if (*traverse == 's')
 				ft_putstr(va_arg(arg,int));
 			//sSpdDioOuUxXcC
 		}
