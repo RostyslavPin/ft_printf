@@ -17,8 +17,6 @@
 #include <stdio.h>
 // #include <locale.h>
 
-int g_ret;
-
 int	str_contains(char c)
 {
 	static char conversions [] = "sSpdDioOuUxXcC";
@@ -45,7 +43,7 @@ int flags(char flag, char *search)
 }
 //#0-+ and space
 
-int	handle_d_i(char *f, int d_i)
+void	handle_d_i(char *f, int d_i)
 {
 	int i;
 	int l_justfy;
@@ -74,8 +72,6 @@ int	handle_d_i(char *f, int d_i)
 			ft_putchar('+');
 		ft_putnbr(d_i);
 	}
-	g_ret = num_digits;
-	return(g_ret);
 }
 
 int ft_printf(const char *format, ...)
@@ -100,14 +96,14 @@ int ft_printf(const char *format, ...)
 				flags[i++] = *traverse++;
 			if (*traverse == 'd' || *traverse == 'i')
 				handle_d_i(flags, va_arg(arg, int));
-			else if (*traverse == 'c')
+			if (*traverse == 'c')
 				ft_putchar((unsigned char)(va_arg(arg, int)));
-			else if (*traverse == 'C')
+			if (*traverse == 'C')
 				ft_putchar_unicode(va_arg(arg, int));
-			else if(*traverse == '%')
+			if(*traverse == '%')
 				ft_putchar('%');
-			else if (*traverse == 's')
-				ft_putstr(va_arg(arg, char *));
+			if (*traverse == 's')
+				ft_putstr(va_arg(arg,int));
 			//sSpdDioOuUxXcC
 		}
 		else
