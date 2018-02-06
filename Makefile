@@ -22,7 +22,7 @@ SRC = ./src/ft_bzero.c ./src/ft_isdigit.c \
 	  ./src/ft_atoi.c ./src/ft_memset.c ./src/ft_isdigit.c\
 	  ./src/ft_itoa.c ./src/ft_printf.c ./src/ft_putchar.c\
 	  ./src/ft_putstr.c ./src/ft_putchar_unicode.c ./src/ft_strlen.c\
-	  ./src/ft_strnew.c ft_putnbr.c
+	  ./src/ft_strnew.c ./src/ft_putnbr.c
 
 OBJ = ft_bzero.o ft_isdigit.o \
 	  ft_atoi.o ft_memset.o ft_isdigit.o\
