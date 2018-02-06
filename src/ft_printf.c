@@ -102,8 +102,8 @@ int ft_printf(const char *format, ...)
 				ft_putchar_unicode(va_arg(arg, int));
 			else if(*traverse == '%')
 				ft_putchar('%');
-			// else if (*traverse == 's')
-			// 	ft_putstr(va_arg(arg,int));
+			else if (*traverse == 's')
+				ft_putstr(va_arg(arg, char *));
 			//sSpdDioOuUxXcC
 		}
 		else
